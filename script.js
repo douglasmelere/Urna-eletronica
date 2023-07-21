@@ -5,6 +5,7 @@ let aviso = document.querySelector(".d-2");
 let lateral = document.querySelector(".d-1-right");
 let numeros = document.querySelector(".d-1-3");
 
+const audio = new Audio('/sound/som-urna-fim.mp3');
 let etapaAtual = 0;
 let numero = ''
 let votoBranco = true
@@ -121,6 +122,7 @@ function confirma() {
     if(etapas[etapaAtual] !== undefined) {
       comecarEtapa()
     } else {
+      audio.play()
       document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>'
       console.log(votos)
     }
